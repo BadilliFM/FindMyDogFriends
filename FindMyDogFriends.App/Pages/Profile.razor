@@ -2,9 +2,57 @@
 @page "/User/{Id:int}"
 
 <h3>Profile</h3>
+@page "/profile"
+
+@using FindMyDogFriends.Data.ViewModels;
+@using FindMyDogFriends.Services
+
+@using FindMyDogFriends.App.Pages.Components;
+
+<h3>Profile</h3>
+
+    <div class="card border-0" style="width: 18rem;">
+    <img class="card-img-top" src="img/mve.jpg" alt="Card image cap" style="width: 80%; border-radius: 50%; margin: 0 auto; box-shadow: 0 0 10px rgba(0,0,0,.2);">
+    <div class="card-body">
+        <h5 class="card-title">Mihaela Ivanov</h5>
+        <p class="card-text"><UserPosition /></p>
+    </div>
+    <ul class="list-group border-0">
+        <li class="list-group-item border-0"><b>Hunde:</b></li>
+        <li class="list-group-item border-0">
+            Enzo:
+            <ul class="list-group border-0">
+                <li class="list-group-item">Køn: Han</li>
+                <li class="list-group-item">Race: Husky, Samoyed</li>
+                <li class="list-group-item">Født: 2022-04-20</li>
+            </ul>
+        </li>
+        <li class="list-group-item border-0">
+            Vita
+            <ul class="list-group border-0">
+                <li class="list-group-item">Køn: Hun</li>
+                <li class="list-group-item">Race: Shæfer, Kangal, Slædehund</li>
+                <li class="list-group-item">Født: 2021-06-19</li>
+            </ul>
+        </li>
+    </ul>
+    <div class="card-body">
+        <button class="btn btn-warning" disabled>Opdatér</button>
+    </div>
+</div>
 
 <HashedPassword />
 
-@code {
 
+}
+@code{
+    public virtual ICollection<DogVM> Dogs { get; set; } //Navigation property
+
+    protected override async Task OnInitializedAsync()
+    {
+       
+    }
+
+
+  
 }

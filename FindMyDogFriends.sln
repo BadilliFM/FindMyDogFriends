@@ -3,12 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindMyDogFriends.App", "FindMyDogFriends.App\FindMyDogFriends.App.csproj", "{B89571D9-230D-4863-A2F2-B646DCD57E49}"
+	ProjectSection(ProjectDependencies) = postProject
+		{018B4358-FAEC-413B-BA51-3FB3487649D0} = {018B4358-FAEC-413B-BA51-3FB3487649D0}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindMyDogFriends.WebAPI", "FindMyDogFriends.WebAPI\FindMyDogFriends.WebAPI.csproj", "{4751ABFB-F60A-41A7-8DDC-38EB0D165A4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindMyDogFriends.WebAPI", "FindMyDogFriends.WebAPI\FindMyDogFriends.WebAPI.csproj", "{4751ABFB-F60A-41A7-8DDC-38EB0D165A4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindMyDogFriends.Data", "FindMyDogFriends.Data\FindMyDogFriends.Data.csproj", "{62EF1B01-32EE-4694-B7CD-E9D3F51988E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindMyDogFriends.Data", "FindMyDogFriends.Data\FindMyDogFriends.Data.csproj", "{62EF1B01-32EE-4694-B7CD-E9D3F51988E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindMyDogFriends.Security", "FindMyDogFriends.Security\FindMyDogFriends.Security.csproj", "{BD089DF5-1F54-4E99-988A-CAF77C6DFA6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindMyDogFriends.Security", "FindMyDogFriends.Security\FindMyDogFriends.Security.csproj", "{BD089DF5-1F54-4E99-988A-CAF77C6DFA6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindMyDogFriends.Services", "FindMyDogFriends.Services\FindMyDogFriends.Services.csproj", "{018B4358-FAEC-413B-BA51-3FB3487649D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,12 +39,16 @@ Global
 		{BD089DF5-1F54-4E99-988A-CAF77C6DFA6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD089DF5-1F54-4E99-988A-CAF77C6DFA6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD089DF5-1F54-4E99-988A-CAF77C6DFA6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{018B4358-FAEC-413B-BA51-3FB3487649D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{018B4358-FAEC-413B-BA51-3FB3487649D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{018B4358-FAEC-413B-BA51-3FB3487649D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{018B4358-FAEC-413B-BA51-3FB3487649D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		        SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
 		SolutionGuid = {C253E51E-9B53-42BD-9A02-4078CC49AC52}
+		        SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
 	EndGlobalSection
 EndGlobal

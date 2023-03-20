@@ -50,12 +50,14 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="BrowserInterop" Version="1.1.2" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\FindMyDogFriends.Data\FindMyDogFriends.Data.csproj" />
       <ProjectReference Include="..\FindMyDogFriends.Security\FindMyDogFriends.Security.csproj" />
+      <ProjectReference Include="..\FindMyDogFriends.Services\FindMyDogFriends.Services.csproj" />
     </ItemGroup>
 
 </Project>

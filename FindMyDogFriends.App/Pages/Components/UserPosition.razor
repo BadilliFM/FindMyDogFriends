@@ -1,0 +1,48 @@
+﻿@using System
+@using BrowserInterop.Extensions
+@using BrowserInterop.Geolocation
+@inject IJSRuntime jsRuntime
+@implements IAsyncDisposable
+
+@if (currentPosition != null)
+{
+    /*
+    <button type="button" class="btn btn-info" @onclick="GetGeolocation">Get Current Position</button>
+    <br/>
+    <span>| Breddegrad: @currentPosition.Coords.Latitude | Længdegrad : @currentPosition.Coords.Longitude |</span>
+    */
+
+    /*if (currentPosition.Coords.Latitude == currentPosition.Coords.Latitude && currentPosition.Coords.Longitude == currentPosition.Coords.Longitude) //For simulating is dogpark.*/
+    if (currentPosition.Coords.Latitude == 57.0404 && currentPosition.Coords.Longitude == 9.995)
+    {
+        <span class="border border-success p-2 mx-auto rounded-pill">er i Budumvej Hundeskov, 9220 Aalborg Øst.</span>
+    }
+    else
+    {
+        <span class="border border-danger p-2 mx-auto rounded-pill">er ikke i hundeskoven.</span>
+    }
+}
+
+@code {
+    private WindowNavigatorGeolocation geolocationWrapper;
+    private GeolocationPosition currentPosition;
+    private List<GeolocationPosition> positionHistory = new List<GeolocationPosition>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var window = await jsRuntime.Window();
+        var navigator = await window.Navigator();
+        geolocationWrapper = navigator.Geolocation;
+        await GetGeolocation();
+    }
+
+    public async Task GetGeolocation()
+    {
+        currentPosition = (await geolocationWrapper.GetCurrentPosition(new PositionOptions()
+            {
+                EnableHighAccuracy = true,
+                MaximumAgeTimeSpan = TimeSpan.FromHours(1),
+                TimeoutTimeSpan = TimeSpan.FromMinutes(1)
+            })).Location;
+    }
+}
