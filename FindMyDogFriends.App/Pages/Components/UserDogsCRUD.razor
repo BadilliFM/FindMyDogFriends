@@ -1,0 +1,22 @@
+﻿@using FindMyDogFriends.Data.ViewModels;
+
+<h3>Edit your dogs</h3>
+
+<EditForm Model="@dog" OnSubmit="@Submit">
+    <InputText id="name" @bind-Value="dog.Name" />
+    <InputText id="name" @bind-Value="dog.Breed" />
+    <InputText id="name" @bind-Value="dog.Gender" />
+
+    <button type="submit">Submit</button>
+</EditForm>
+
+
+@code {
+    private DogVM dog = new();
+
+    private void Submit()
+    {
+
+        // code for CRUD dogs into DB where UserID is the currently logged in user.
+    }
+}

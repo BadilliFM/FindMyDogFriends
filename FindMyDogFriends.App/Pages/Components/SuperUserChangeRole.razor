@@ -1,0 +1,26 @@
+﻿@using FindMyDogFriends.Data.ViewModels;
+
+<h3>SuperUserChangeRole</h3>
+
+@{ 
+    //Get a user by searched ID. Below shows, that SuperUser inherits attributes from User.
+    //Mihaela can as Admin change other super user's role and thereby rights.
+}
+<EditForm Model="@user" OnSubmit="@Submit">
+    <InputText id="name" @bind-Value="user.FirstName" />
+    <InputText id="name" @bind-Value="user.LastName" />
+    <InputText id="name" @bind-Value="user.Role" />
+
+    <button type="submit">Submit</button>
+</EditForm>
+
+
+@code {
+    private SuperUserVM user = new();
+
+    private void Submit()
+    {
+
+        // code for CRUD for selected user's role in DB.
+    }
+}

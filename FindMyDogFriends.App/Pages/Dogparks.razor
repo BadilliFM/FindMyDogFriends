@@ -1,0 +1,68 @@
+﻿@page "/dogparks"
+
+@using FindMyDogFriends.Services
+@using FindMyDogFriends.Data.ViewModels
+@using FindMyDogFriends.App.Pages.Components
+@inject IDogparkService DogparkService;
+
+@if (_dogparkList == null)
+{
+    <p>Loading dogpark list....</p>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <!--
+                    <th>ID</th>
+                    --->
+                    <th>Hundeskov</th>
+                    <th>Antal tilstedeværende</th>
+                    <!--
+                    <th>Lat</th>
+                    <th>Long</th>
+                    --->
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var dogpark in _dogparkList)
+                {
+                    <tr>
+                        <!--
+                        <td>@dogpark.Id</td>
+                        --->
+                        <td>@dogpark.Name</td>
+                        <td>@dogpark.CurrentlyPresentUsers</td>
+                        <!--
+                        <td>@dogpark.GeoLocationLatitude</td>
+                        <td>@dogpark.GeoLocationLongitude</td>
+                        --->
+                        <td><button class="btn btn-info" @onclick="@ShowDogpark">Se hvem</button></td>
+                        <NavLink class="nav-link" href="dogpark">
+                            <span class="oi oi-globe" aria-hidden="true"></span> Hundeskove
+                        </NavLink>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+
+
+@code {
+
+    List<DogparkVM> _dogparkList;
+    protected override async Task OnInitializedAsync()
+    {
+        _dogparkList = await DogparkService.GetAllDogparks();
+    }
+
+    [Inject]
+    public NavigationManager NavigationManager { get; set; }
+    public void ShowDogpark()
+    {
+        NavigationManager.NavigateTo("Dogpark");
+    }
+}

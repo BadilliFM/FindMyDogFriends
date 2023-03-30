@@ -1,0 +1,23 @@
+﻿@using FindMyDogFriends.Data.DbModels;
+
+<h3>CreateUser</h3>
+
+<EditForm Model="@user" OnSubmit="@Submit">
+    <InputText id="name" @bind-Value="user.UserName" />
+    <InputText id="name" @bind-Value="user.Password" />
+
+    <button type="submit">Submit</button>
+</EditForm>
+
+
+@code {
+    private User user = new();
+
+    private void Submit()
+    {
+
+        // code for inserting a user into DB.
+        // From VM to DbModel 
+        // Validate via Security.UserValidator
+    }
+}

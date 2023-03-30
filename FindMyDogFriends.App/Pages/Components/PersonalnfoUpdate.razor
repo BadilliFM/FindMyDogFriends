@@ -1,0 +1,21 @@
+﻿@using FindMyDogFriends.Data.ViewModels;
+
+<h3>Update personal info</h3>
+
+<EditForm Model="@user" OnSubmit="@Submit">
+    <InputText id="fname" @bind-Value="user.FirstName" />
+    <InputText id="lname" @bind-Value="user.LastName" />
+
+    <button type="submit">Submit</button>
+</EditForm>
+
+
+@code {
+    private UserVM user /* = GetUserById(); */ ;
+
+    private void Submit()
+    {
+
+        // code for updating a user in DB.
+    }
+}

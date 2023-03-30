@@ -1,4 +1,5 @@
 ﻿using FindMyDogFriends.Data.DbModels;
+using FindMyDogFriends.Data.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FindMyDogFriends.Data.ViewModels;
 
-public class DogparkVM
+public class DogparkVM : IDogpark
 {
     public int Id { get; set; }
     public string Name { get; set; }

@@ -10,6 +10,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindMyDogFriends.WebAPI", "FindMyDogFriends.WebAPI\FindMyDogFriends.WebAPI.csproj", "{4751ABFB-F60A-41A7-8DDC-38EB0D165A4E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindMyDogFriends.Data", "FindMyDogFriends.Data\FindMyDogFriends.Data.csproj", "{62EF1B01-32EE-4694-B7CD-E9D3F51988E4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BD089DF5-1F54-4E99-988A-CAF77C6DFA6F} = {BD089DF5-1F54-4E99-988A-CAF77C6DFA6F}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindMyDogFriends.Security", "FindMyDogFriends.Security\FindMyDogFriends.Security.csproj", "{BD089DF5-1F54-4E99-988A-CAF77C6DFA6F}"
 EndProject
